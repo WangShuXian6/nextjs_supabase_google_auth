@@ -5,6 +5,7 @@ import { createClient } from '@/utils/supabase/server'
 export async function GET(request: Request) {
   const { searchParams, origin } = new URL(request.url)
   const code = searchParams.get('code')
+  console.log('google 授权回掉code：',code)
   // if "next" is in param, use it as the redirect 
   // 如果参数中有“next”，则使用它作为重定向 URL
   const next = searchParams.get('next') ?? '/'
